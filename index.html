@@ -11,29 +11,28 @@
 </head>
 
 <body>
-    <div class="body">
-        <div class="container">
-            <div class="screen">
-                <div class="topMini">456+333</div>
-                <div class="bottomBig">0123456789</div>
+        <div id="cont" class="container">
+            <div id="scrn" class="screen">
+                <output id = "input" class="topMini"></output>
+                <output id = "output" class="bottomBig">0</output>
             </div>
             <table>
                 <tr>
-                    <td><button class="ops wide">Clear</button></td>
+                    <td><button id ="clear" class="ops wide">Clear</button></td>
                     <td><button class="ops"><i class="material-icons">&#xe14a;</i></button></td>
                     <td><button class="ops">!</button></td>
-                    <td><button class="ops"><sup>&#8339</sup>&#8730</button></td>
+                    <td><button class="ops"><sup>x</sup>&#8730</button></td>
                 </tr>
                 <tr>
-                    <td><button class="ops">y<sup>x</sup></button></td>
-                    <td><button class="ops">(</button></td>
-                    <td><button class="ops">)</button></td>
-                    <td><button class="ops">cos</button></td>
+                    <td><button id="^" class="ops">y<sup>x</sup></button></td>
+                    <td><button id="(" class="ops">(</button></td>
+                    <td><button id=")"  class="ops">)</button></td>
+                    <td><button id="cos(" class="ops">cos</button></td>
                 </tr>
                 <tr>
-                    <td><button class="ops">sin</button></td>
-                    <td><button class="ops">tan</button></td>
-                    <td><button class="ops">e</button></td>
+                    <td><button id="sin(" class="ops">sin</button></td>
+                    <td><button id="tan(" class="ops">tan</button></td>
+                    <td><button id="2.718281828459" class="ops">e</button></td>
                     <td><button class="ops">+</button></td>
                 </tr>
             </table>
@@ -41,7 +40,7 @@
                 <td><button class="ops num">7</button></td>
                 <td><button class="ops num">8</button></td>
                 <td><button class="ops num">9</button></td>
-                <td><button class="ops num">-</button></td>
+                <td><button class="ops">-</button></td>
                 </tr>
                 <tr>
                     <td><button class="ops num">4</button></td>
@@ -57,14 +56,13 @@
                 </tr>
                 <tr>
                     <td><button class="ops num">0</button></td>
-                    <td><button class="ops">.</button></td>
-                    <td><button class="ops">π</button></td>
+                    <td><button class="ops num">.</button></td>
+                    <td><button id="3.1415926" class="ops num">π</button></td>
                     <td><button class="ops">&divide</button></td>
                 </tr>
             </table>
         </div>
-    </div>
-
+        <script src="calculator.js"></script>
 </body>
 
 </html>
