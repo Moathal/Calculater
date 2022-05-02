@@ -71,7 +71,7 @@ class analyser {
             };
         };
         for (i = 0; i < innerEquat.length; i++) {
-            if (innerEquat.slice(i - 2, i + 1) === "Ans") return innerEquat.replace(innerEquat.slice(i - 2, i + 1), Ans)
+            if (innerEquat.slice(i - 2, i + 1) === "Ans") return analyze.simplify(innerEquat.replace(innerEquat.slice(i - 2, i + 1), Ans))
             if (innerEquat.charAt(i) === "e") return analyze.simplify(innerEquat.replace(innerEquat.charAt(i), "2.7182818"));
             if (innerEquat.charAt(i) === "π") return analyze.simplify(innerEquat.replace(innerEquat.charAt(i), '3.1415926'));
             if (innerEquat.charAt(i) === '^') return analyze.extractor(i);
