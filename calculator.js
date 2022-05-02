@@ -71,9 +71,7 @@ class analyser {
             };
         };
         for (i = 0; i < innerEquat.length; i++) {
-            if (innerEquat.slice(i - 2, i + 1) === "Ans") {
-                innerEquat = innerEquat.replace(innerEquat.slice(i - 2, i + 1), Ans)
-            };
+            if (innerEquat.slice(i - 2, i + 1) === "Ans") return innerEquat.replace(innerEquat.slice(i - 2, i + 1), Ans)
             if (innerEquat.charAt(i) === "e") return analyze.simplify(innerEquat.replace(innerEquat.charAt(i), "2.7182818"));
             if (innerEquat.charAt(i) === "π") return analyze.simplify(innerEquat.replace(innerEquat.charAt(i), '3.1415926'));
             if (innerEquat.charAt(i) === '^') return analyze.extractor(i);
@@ -333,34 +331,36 @@ dot.addEventListener('click', () => {
 // handling the input string and find the result and display it.
 equal.addEventListener("click", () => {
     equation = input.innerText;
-    for (i = 0; i < equation.length; i++) {/* if there are brackets they will handeled here and send the inner inner string to analyze.simplify and if brackets were of root or triganometric operation, they will be sent to solve right away */
-        if (equation.charAt(i) === ')') {
-            for (c = i; c >= 0; c--) {
+    for (ele = 0; ele < equation.length; ele++) {/* if there are brackets they will handeled here and send the innerstring 
+    to analyze.simplify and if brackets were of root or triganometric operation, they will be sent to solve right away */
+        if (equation.charAt(ele) === ')') {
+            for (c = ele; c >= 0; c--) {
                 if (equation.charAt(c) === '(') {
                     if (equation.charAt(c - 1) === '√') {
-                        equation = equation.replace(equation.slice(c - 2, i + 1), solve.root(analyze.simplify(equation.slice(c + 1, i)), equation.charAt(c - 2)));
-                        i = 0;
+                        innerEquat = solve.root(analyze.simplify(equation.slice(c + 1, ele)), equation.charAt(c - 2));
+                        equation = equation.replace(equation.slice(c - 2, ele + 1), innerEquat);
+                        ele = 0;
                         break;
                     }
                     else if (equation.slice(c - 3, c) === 'cos') {
-                        innerEquat = solve.cos(analyze.simplify(equation.slice(c + 1, i)))
-                        equation = equation.replace(equation.slice(c - 3, i + 1), innerEquat);
-                        i = 0;
+                        innerEquat = solve.cos(analyze.simplify(equation.slice(c + 1, ele)))
+                        equation = equation.replace(equation.slice(c - 3, ele + 1), innerEquat);
+                        ele = 0;
                         break;
                     }
                     else if (equation.slice(c - 3, c) === 'sin') {
-                        equation = equation.replace(equation.slice(c - 3, i + 1), solve.sin(analyze.simplify(equation.slice(c + 1, i))));
-                        i = 0;
+                        equation = equation.replace(equation.slice(c - 3, ele + 1), solve.sin(analyze.simplify(equation.slice(c + 1, ele))));
+                        ele = 0;
                         break;
                     }
                     else if (equation.slice(c - 3, c) === 'tan') {
-                        equation = equation.replace(equation.slice(c - 3, i + 1), solve.tan(analyze.simplify(equation.slice(c + 1, i))));
-                        i = 0;
+                        equation = equation.replace(equation.slice(c - 3, ele + 1), solve.tan(analyze.simplify(equation.slice(c + 1, ele))));
+                        ele = 0;
                         break;
                     }
                     else {
-                        equation = equation.replace(equation.slice(c, i + 1), analyze.simplify(equation.slice(c + 1, i)));
-                        i = 0;
+                        equation = equation.replace(equation.slice(c, ele + 1), analyze.simplify(equation.slice(c + 1, ele)));
+                        ele = 0;
                         break;
                     };
                 };
