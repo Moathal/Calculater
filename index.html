@@ -7,62 +7,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="calculator.js" defer></script>
     <title>Calculator</title>
 </head>
 
 <body>
         <div id="cont" class="container">
             <div id="scrn" class="screen">
-                <output id = "input" class="topMini"></output>
+                <div id = "input" class="topMini"></div>
                 <output id = "output" class="bottomBig">0</output>
             </div>
-            <table>
+            <table class="specialOps">
                 <tr>
-                    <td><button id ="clear" class="ops wide">Clear</button></td>
-                    <td><button class="ops"><i class="material-icons">&#xe14a;</i></button></td>
-                    <td><button class="ops">!</button></td>
-                    <td><button class="ops"><sup>x</sup>&#8730</button></td>
+                    <td><button style="color: rgb(248, 31, 2);" id ="clear" class="btn wide">C</button></td>
+                </tr>
+                    
+                <tr>
+                    <td><button class="btn"><i style="color: aquamarine;" id="BckSpc" class="material-icons">&#xe14a;</i></button></td>
+                    <td><button style="background-color: rgb(0, 29, 56);" id="(" class="btn num">(</button></td>
+                    <td><button style="background-color: rgb(0, 29, 56);" id=")"  class="btn num">)</button></td>
+                    <td><button id="root" class="btn root"><sup>x</sup>&#8730</button></td>
                 </tr>
                 <tr>
-                    <td><button id="^" class="ops">y<sup>x</sup></button></td>
-                    <td><button id="(" class="ops">(</button></td>
-                    <td><button id=")"  class="ops">)</button></td>
-                    <td><button id="cos(" class="ops">cos</button></td>
+                    <td><button id="tan(" class="btn trig">tan</button></td>
+                    <td><button id="cos(" class="btn trig">cos</button></td>
+                    <td><button id="sin(" class="btn trig">sin</button></td>
+                    <td><button id="^" class="btn exp">y<sup>x</sup></button></td>
                 </tr>
                 <tr>
-                    <td><button id="sin(" class="ops">sin</button></td>
-                    <td><button id="tan(" class="ops">tan</button></td>
-                    <td><button id="2.718281828459" class="ops">e</button></td>
-                    <td><button class="ops">+</button></td>
+                    
+                    <td><button style="color: cadetblue;" id="ans" class="btn constant">Ans</button></td>
+                    <td><button id="2.718281828459" class="btn constant">e</button></td>
+                    <td><button id="3.1415926" class="btn constant">π</button></td>
+                    <td><button class="btn op">+</button></td>
                 </tr>
             </table>
-            <table class="buttons">
-                <td><button class="ops num">7</button></td>
-                <td><button class="ops num">8</button></td>
-                <td><button class="ops num">9</button></td>
-                <td><button class="ops">-</button></td>
+            <table class="numsANDops">
+                <td><button class="btn num">7</button></td>
+                <td><button class="btn num">8</button></td>
+                <td><button class="btn num">9</button></td>
+                <td><button class="btn op">-</button></td>
                 </tr>
                 <tr>
-                    <td><button class="ops num">4</button></td>
-                    <td><button class="ops num">5</button></td>
-                    <td><button class="ops num">6</button></td>
-                    <td><button class="ops">&times</button></td>
+                    <td><button class="btn num">4</button></td>
+                    <td><button class="btn num">5</button></td>
+                    <td><button class="btn num">6</button></td>
+                    <td><button id="by" class="btn op">&times</button></td>
                 </tr>
                 <tr>
-                    <td><button class="ops num">1</button></td>
-                    <td><button class="ops num">2</button></td>
-                    <td><button class="ops num">3</button></td>
-                    <td><button class="ops">/</button></td>
+                    <td><button class="btn num">1</button></td>
+                    <td><button class="btn num">2</button></td>
+                    <td><button class="btn num">3</button></td>
+                    <td><button id="dvd1" class="btn op">/</button></td>
                 </tr>
                 <tr>
-                    <td><button class="ops num">0</button></td>
-                    <td><button class="ops num">.</button></td>
-                    <td><button id="3.1415926" class="ops num">π</button></td>
-                    <td><button class="ops">&divide</button></td>
+                    <td><button id="equal" style="color: aquamarine;" class="btn">=</button></td>
+                    <td><button class="btn num">0</button></td>
+                    <td><button id="." class="btn">.</button></td>
+                    <td><button id="dvd2" class="btn op">&divide</button></td>
                 </tr>
             </table>
         </div>
-        <script src="calculator.js"></script>
+        
 </body>
 
 </html>

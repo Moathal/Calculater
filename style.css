@@ -4,6 +4,7 @@ html{
     padding: 0px;
     
 }
+
 body{
     min-height: 100%;
     min-width: 100%;
@@ -15,6 +16,7 @@ body{
     padding: 0px;
     margin: 0px;
 }
+
 .container{
     justify-self: center;
     height: 71.116%;
@@ -31,6 +33,7 @@ body{
     background-color: rgb(0, 69, 134);
     box-shadow: 0px 0px 6px rgb(0, 29, 56);
 }
+
 .screen{
     height : 25%;
     width: 94%;
@@ -48,6 +51,7 @@ body{
     box-shadow: 0px 0px 1px lightblue, 0px 0px 6px darkblue inset;
     color: rgb(0, 0, 61);
 }
+
 .topMini{
     border:none;
     background-image:none;
@@ -60,7 +64,9 @@ body{
     overflow: hidden;
     padding: 0px;
     margin: 0px;
+    word-wrap: break-word;
 }
+
 .bottomBig{
     border:none;
     background-image:none;
@@ -70,13 +76,15 @@ body{
     box-shadow: none;
     padding: 0px;
     margin: 0px;
-    
+    text-align: right;
     min-height: 60%;
     min-width: 100%;
-    font-size: 3.8em;
+    font-size: 2.8em;
     flex-shrink: 0;
+    word-wrap: break-word;
 }
-button.ops{
+
+button.btn{
     outline: none;
     transition: none;
     -webkit-appearance: none;
@@ -95,10 +103,12 @@ button.ops{
     text-align: center;
     text-anchor: middle;
 }
-button.ops.num{
+
+button.btn.num{
     background-color: rgb(14, 36, 56);
 }
-button.ops:active { 
+
+button.btn:active { 
     box-shadow: none;
     box-shadow: 0px 0px 8px rgb(0, 60, 116) inset;
 }
@@ -107,6 +117,7 @@ sup{
     font-size: 14px;
     color: rgb(255, 255, 255);
 }
+
 i.material-icons{
     margin: 3px;
     color: rgb(255, 255, 255);
@@ -115,7 +126,8 @@ i.material-icons{
     align-items: center;
     justify-content: center;
 }
-.buttons{
+
+.numsANDops{
     display: flex;
     flex-direction: row;
     width: fit-content;
