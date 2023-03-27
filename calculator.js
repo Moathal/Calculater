@@ -37,21 +37,24 @@ class solver {
         return ans
     }
     cos(input1, ans) {
-        ans = (Math.cos(parseFloat(input1) * (Math.pi / 180))) * 100000000;
+        input1 = parseFloat(input1) * (Math.PI/180)
+        ans = (Math.cos(input1)) * 100000000;
         if (ans !== 0) {
             ans = Math.round(ans) / 100000000;
         };
         return ans
     }
     sin(input1, ans) {
-        ans = (Math.sin(parseFloat(input1) * (Math.pi / 180))) * 100000000;
+        input1 = parseFloat(input1) * (Math.PI/180)
+        ans = (Math.sin(input1)) * 100000000;
         if (ans !== 0) {
             ans = Math.round(ans) / 100000000;
         };
         return ans
     }
     tan(input1, ans) {
-        ans = (Math.tan(parseFloat(input1) * (Math.pi / 180))) * 100000000;
+        input1 = parseFloat(input1) * (Math.PI/180);
+        ans = (Math.tan(parseFloat(input1))) * 100000000;
         if (ans !== 0) {
             ans = Math.round(ans) / 100000000;
         };
